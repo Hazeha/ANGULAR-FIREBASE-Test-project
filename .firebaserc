@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "crudbobshop": {
+      "hosting": {
+        "vac": [
+          "crudbobshop"
+        ]
+      }
+    }
+  }
+}

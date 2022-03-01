@@ -1,0 +1,27 @@
+    <div class="card h-100">
+      <a href="#"><img src="{{ data.imageUrl }}" class="mr-3" alt="..." width="220"></a>
+      <div class="card-body">
+        <h4 class="card-title">
+          <a href="#">{{ data.productName }}</a> <br>
+          <app-product-rating
+            [rating]="data.rating"
+            [numOfReviews]="data.numOfReviews">
+          </app-product-rating>
+          <div [ngSwitch]="data.rating">
+            <div *ngSwitchCase="1"> <p class="ratingDiscription">Poor</p></div>
+            <div *ngSwitchCase="2"> <p class="ratingDiscription">Fair</p></div>
+            <div *ngSwitchCase="3"> <p class="ratingDiscription">Good</p></div>
+            <div *ngSwitchCase="4"> <p class="ratingDiscription">Very Good</p></div>
+            <div *ngSwitchCase="5"> <p class="ratingDiscription">Excellent</p></div>
+            <div *ngSwitchDefault> <p class="ratingDiscription">Not Rated Yet</p></div>
+          </div>
+        </h4>
+        <p class="card-text">{{ data.description | truncate: 75 }}</p>
+        <button
+          class="btn btn-warning"
+          [class.active]="isActive"
+          (click)="onClick($event)"
+        >Buy {{ data.productName }}</button>
+      </div>
+    </div>
+
